@@ -28,8 +28,12 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
+            <div className={styles.logoDiv}>
+            <img className={styles.logoimg} src="https://cdn.prod.website-files.com/663d1907e337de23e83c30b2/67a07ffa91f78ddf2b941175_KIIT-logo-HD.png" alt="KiiT" />
             <span className={styles.logo}>K-1000</span>
+            </div>
           </motion.div>
+
 
           <div className={styles.menuDesktop}>
             {navItems.map((item) => (

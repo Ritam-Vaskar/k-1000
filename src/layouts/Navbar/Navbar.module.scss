@@ -6,6 +6,17 @@
     backdrop-filter: blur(8px);
     z-index: 50;
   }
+
+  .logoimg {
+    width: 50px;
+  }
+
+  .logoDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
   
   .container {
     max-width: 1200px;
