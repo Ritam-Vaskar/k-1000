@@ -1,0 +1,75 @@
+{
+    "programInfo": {
+      "title": "The K-1000 Research Program",
+      "description": "The K-1000 Research Program is KIIT's flagship initiative to nurture the next generation of researchers and innovators. Our mission is to support 1000 exceptional students in pursuing cutting-edge research across various disciplines, fostering innovation and scientific excellence.",
+      "logo": "https://cdn.prod.website-files.com/663d1907e337de23e83c30b2/67a07fbff2e2a5e3767149d1_KIIT-Full-Logo-Center.png"
+    },
+    "whyJoin": [
+      {
+        "icon": "Star",
+        "title": "Research Excellence",
+        "description": "Work on cutting-edge projects under the guidance of experienced faculty members and industry experts."
+      },
+      {
+        "icon": "Globe",
+        "title": "Global Exposure",
+        "description": "Collaborate with international researchers and present your work at prestigious conferences worldwide."
+      },
+      {
+        "icon": "Award",
+        "title": "Career Growth",
+        "description": "Enhanced career prospects through research publications, patents, and industry connections."
+      }
+    ],
+    "benefits": [
+      {
+        "icon": "Rocket",
+        "title": "Project Support",
+        "description": "Access to state-of-the-art laboratories, research facilities, and funding opportunities to bring your innovative ideas to life."
+      },
+      {
+        "icon": "FileText",
+        "title": "Patent Guidance",
+        "description": "Expert mentorship through the patent filing process, including IP rights protection and commercialization support."
+      },
+      {
+        "icon": "BookOpen",
+        "title": "Conference & Publication",
+        "description": "Financial support for publishing in top-tier journals and presenting at international conferences."
+      },
+      {
+        "icon": "Lightbulb",
+        "title": "Startup & Entrepreneurship",
+        "description": "Access to KIIT's incubation center, mentorship programs, and networking opportunities with industry leaders."
+      },
+      {
+        "icon": "Globe",
+        "title": "Foreign MS/PhD Support",
+        "description": "Guidance and recommendations for pursuing higher studies abroad, with access to KIIT's global academic network."
+      },
+      {
+        "icon": "Users",
+        "title": "Research Community",
+        "description": "Join a vibrant community of researchers, participate in workshops, and collaborate on interdisciplinary projects."
+      }
+    ],
+    "selectionSteps": [
+      {
+        "title": "Submit Application",
+        "description": "Fill out the detailed Google Form with your academic background, research experience, and aspirations."
+      },
+      {
+        "title": "Assessment Test",
+        "description": "Take a comprehensive test evaluating your research aptitude, analytical skills, and domain knowledge."
+      },
+      {
+        "title": "Interview Round",
+        "description": "Present your research ideas and discuss your potential contribution to the K-1000 program."
+      },
+      {
+        "title": "Final Selection",
+        "description": "Selected candidates will be added to the K-1000 research group and begin their research journey."
+      }
+    ]
+  }
+  
