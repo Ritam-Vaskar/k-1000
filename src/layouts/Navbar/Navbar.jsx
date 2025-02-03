@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import styles from './Navbar.module.scss';
@@ -7,12 +8,12 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    'Home',
-    'About',
-    'Benefits',
-    'Selection',
-    'Apply',
-    'Contact'
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Benefits', path: '/benefits' },
+    { name: 'Selection', path: '/selection' },
+    { name: 'Apply', path: '/apply' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   const menuVariants = {
@@ -29,26 +30,30 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
           >
             <div className={styles.logoDiv}>
-            <img className={styles.logoimg} src="https://cdn.prod.website-files.com/663d1907e337de23e83c30b2/67a07ffa91f78ddf2b941175_KIIT-logo-HD.png" alt="KiiT" />
-            <span className={styles.logo}>K-1000</span>
+              <img className={styles.logoimg} src="https://cdn.prod.website-files.com/663d1907e337de23e83c30b2/67a07ffa91f78ddf2b941175_KIIT-logo-HD.png" alt="KiiT" />
+              <span className={styles.logo}>K-1000</span>
             </div>
           </motion.div>
 
-
+          {/* Desktop Navigation */}
           <div className={styles.menuDesktop}>
             {navItems.map((item) => (
-              <motion.a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className={styles.menuItem}
+              <motion.div
+                key={item.name}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {item}
-              </motion.a>
+                <NavLink
+                  to={item.path}
+                  className={({ isActive }) => isActive ? styles.activeMenuItem : styles.menuItem}
+                >
+                  {item.name}
+                </NavLink>
+              </motion.div>
             ))}
           </div>
 
+          {/* Mobile Menu Button */}
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(!isOpen)}
@@ -58,6 +63,7 @@ const Navbar = () => {
           </motion.button>
         </div>
 
+        {/* Mobile Navigation */}
         <motion.div
           initial="closed"
           animate={isOpen ? "open" : "closed"}
@@ -66,16 +72,19 @@ const Navbar = () => {
           style={{ display: isOpen ? 'block' : 'none' }}
         >
           {navItems.map((item) => (
-            <motion.a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className={styles.mobileItem}
+            <motion.div
+              key={item.name}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => setIsOpen(false)}
             >
-              {item}
-            </motion.a>
+              <NavLink
+                to={item.path}
+                className={({ isActive }) => isActive ? styles.activeMobileItem : styles.mobileItem}
+                onClick={() => setIsOpen(false)}
+              >
+                {item.name}
+              </NavLink>
+            </motion.div>
           ))}
         </motion.div>
       </div>
