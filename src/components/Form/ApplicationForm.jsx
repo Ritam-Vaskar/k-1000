@@ -19,7 +19,7 @@ const ApplicationForm = () => {
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
   // Google Form submission URL
-  const GOOGLE_FORM_ACTION_URL = 'YOUR_GOOGLE_FORM_URL';
+  const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScuql7qJv9M2FmKDrZQONN1wC6i9FNagM76gvb3cktOI3SjCQ/viewform?usp=header';
 
   // Map form fields to Google Form field IDs
   const FORM_FIELD_IDS = {
@@ -28,7 +28,6 @@ const ApplicationForm = () => {
     email: 'entry.456789123',
     branch: 'entry.789123456',
     school: 'entry.321654987',
-    cgpa: 'entry.159753468',
     researchExperience: 'entry.753159456',
     publications: 'entry.951357264'
   };
@@ -58,11 +57,7 @@ const ApplicationForm = () => {
       newErrors.school = 'School is required';
     }
     
-    if (!formData.cgpa.trim()) {
-      newErrors.cgpa = 'CGPA is required';
-    } else if (isNaN(formData.cgpa) || parseFloat(formData.cgpa) > 10) {
-      newErrors.cgpa = 'Invalid CGPA';
-    }
+   
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -100,7 +95,6 @@ const ApplicationForm = () => {
         email: '',
         branch: '',
         school: '',
-        cgpa: '',
         researchExperience: '',
         publications: ''
       });
@@ -212,18 +206,7 @@ const ApplicationForm = () => {
             {errors.school && <div className={styles.error}>{errors.school}</div>}
           </div>
 
-          <div className={styles.formGroup}>
-            <label className={styles.label}>CGPA *</label>
-            <input
-              type="text"
-              name="cgpa"
-              value={formData.cgpa}
-              onChange={handleChange}
-              className={styles.input}
-              placeholder="Enter your CGPA"
-            />
-            {errors.cgpa && <div className={styles.error}>{errors.cgpa}</div>}
-          </div>
+          
 
           <div className={styles.formGroup}>
             <label className={styles.label}>Research Experience</label>
