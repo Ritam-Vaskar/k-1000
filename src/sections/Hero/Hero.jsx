@@ -86,15 +86,16 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
         >
-          <NavLink to="/apply">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={styles.primaryButton}
-            >
-              Apply Now
-            </motion.button>
-          </NavLink>
+          <motion.a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScuql7qJv9M2FmKDrZQONN1wC6i9FNagM76gvb3cktOI3SjCQ/viewform?usp=header"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={styles.primaryButton}
+          >
+            Apply Now
+          </motion.a>
 
           <motion.button
             whileHover={{ scale: 1.05 }}

@@ -7,6 +7,10 @@
   .container {
     max-width: 800px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   
   .title {
@@ -69,7 +73,7 @@
   }
   
   .submitButton {
-    width: 100%;
+    margin-top: 2rem;
     padding: 1rem;
     background: #17d059;
     color: #121212;
