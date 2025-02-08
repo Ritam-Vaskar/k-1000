@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import styles from '../../pages/Benifits/Benifits.module.scss';
+import styles from '../styles/sections.module.scss';
 import { selectionSteps } from '../../../public/data.json';
 
 const SelectionProcessSection = () => (

@@ -50,7 +50,7 @@
       {
         "icon": "Users",
         "title": "Research Community",
-        "description": "Join a vibrant community of researchers, participate in workshops, and collaborate on interdisciplinary projects."
+        "description": "Join a vibrant research community where experts from diverse domains collaborate on groundbreaking projects."
       }
     ],
     "selectionSteps": [
@@ -62,13 +62,10 @@
         "title": "Assessment Test",
         "description": "Take a comprehensive test evaluating your research aptitude, analytical skills, and domain knowledge."
       },
-      {
-        "title": "Interview Round",
-        "description": "Present your research ideas and discuss your potential contribution to the K-1000 program."
-      },
+      
       {
         "title": "Final Selection",
-        "description": "Selected candidates will be added to the K-1000 research group and begin their research journey."
+        "description": "Selected 1000 candidates will be added to the K-1000 research group and begin their research journey."
       }
     ]
   }

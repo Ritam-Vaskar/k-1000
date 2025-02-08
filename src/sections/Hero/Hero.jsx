@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./Hero.module.scss";
-import { NavLink } from "react-router-dom";
 
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -9,7 +8,7 @@ const Hero = () => {
   const images = [
     "https://crf.kiit.ac.in/wp-content/uploads/2020/09/KIIT-Campus-2.jpg",
     "https://crf.kiit.ac.in/wp-content/uploads/2022/01/KIIT-Research-Development-1.jpg",
-    "https://scontent.fbbi2-1.fna.fbcdn.net/v/t39.30808-6/473190529_582937564531623_4156672289478721110_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=z_cHhcwvUR8Q7kNvgHkLuBI&_nc_zt=23&_nc_ht=scontent.fbbi2-1.fna&_nc_gid=AsUoSHhfBglgyZaEMuyuKmO&oh=00_AYDdWELhYBPowB8h1dVjiylltmUujRIqVHdWnVNYCUvLVw&oe=67A65C0F",
+    "https://scontent.fbbi2-1.fna.fbcdn.net/v/t39.30808-6/473190529_582937564531623_4156672289478721110_n.jpg"
   ];
 
   useEffect(() => {
@@ -20,10 +19,10 @@ const Hero = () => {
   }, []);
 
   const stats = [
-    { number: "1000+", label: "Research Projects" },
-    { number: "500+", label: "Publications" },
+    { number: "200+", label: "Research Projects" },
+    { number: "100+", label: "Publications" },
     { number: "50+", label: "Patents Filed" },
-    { number: "100+", label: "International Collaborations" },
+    { number: "50+", label: "International Collaborations" }
   ];
 
   return (
@@ -106,6 +105,20 @@ const Hero = () => {
           </motion.button>
         </motion.div>
 
+        {/* Goals Section */}
+        <motion.div
+          className={styles.goals}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1 }}
+        >
+          <div className={styles.goal}>
+            
+            <div className={styles.goalText}>🚀 Our Goals</div>
+          </div>
+        </motion.div>
+
+        {/* Stats Section */}
         <motion.div
           className={styles.stats}
           initial={{ opacity: 0, y: 20 }}

@@ -146,3 +146,16 @@
     color: #e5e5e5;
     font-size: 1rem;
   }
+
+  .goal{
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+
+    .goalText{
+      font-size: 1.5rem;
+      color: #17d059;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+  }

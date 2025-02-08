@@ -1,24 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
 import { 
   MapPin, 
   Phone, 
   Mail, 
-  Facebook, 
-  Twitter, 
-  Linkedin, 
-  Instagram,
-  Youtube,
   ChevronRight
 } from 'lucide-react';
 import styles from './Footer.module.scss';
 
 const Footer = () => {
   const quickLinks = [
-    { title: 'About Program', href: '#about' },
-    { title: 'Benefits', href: '#benefits' },
-    { title: 'Selection Process', href: '#selection' },
-    { title: 'Apply Now', href: '#apply' }
+    { title: 'Home', path: '/' },
+    { title: 'About Program', path: '/about' },
+    { title: 'Benefits', path: '/benefits' },
+    { title: 'Apply Now', path: '/apply' },
+    { title: 'Contact', path: '/contact' }
   ];
 
   const researchAreas = [
@@ -62,10 +59,13 @@ const Footer = () => {
             <ul>
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href}>
+                  <NavLink 
+                    to={link.path} 
+                    className={({ isActive }) => isActive ? styles.activeLink : ""}
+                  >
                     <ChevronRight size={16} />
                     {link.title}
-                  </a>
+                  </NavLink>
                 </li>
               ))}
             </ul>
@@ -107,21 +107,14 @@ const Footer = () => {
                 Bhubaneswar, Odisha 751024
               </div>
             </div>
+
             <div className={styles.contactItem}>
               <Phone className={styles.icon} size={20} />
-              <div>+91 (674) 2725-113</div>
+              <div>+917008588187</div>
             </div>
             <div className={styles.contactItem}>
               <Mail className={styles.icon} size={20} />
-              <div>research@kiit.ac.in</div>
-            </div>
-
-            <div className={styles.socialLinks}>
-              <a href="#" aria-label="Facebook"><Facebook size={20} /></a>
-              <a href="#" aria-label="Twitter"><Twitter size={20} /></a>
-              <a href="#" aria-label="LinkedIn"><Linkedin size={20} /></a>
-              <a href="#" aria-label="Instagram"><Instagram size={20} /></a>
-              <a href="#" aria-label="YouTube"><Youtube size={20} /></a>
+              <div>k.1000@kiit.ac.in</div>
             </div>
           </motion.div>
         </div>

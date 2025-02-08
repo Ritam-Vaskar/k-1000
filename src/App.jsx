@@ -5,6 +5,9 @@ import ApplicationForm from "./components/Form/ApplicationForm";
 import Footer from "./layouts/Footer/Footer";
 import Navbar from "./layouts/Navbar/Navbar";
 import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
+import Benefits from "./pages/Benefits/Benefits";
+import Contact from "./pages/Contact/Contact";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -24,6 +27,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/apply" element={<ApplicationForm />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/benefits" element={<Benefits/>} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </Router>

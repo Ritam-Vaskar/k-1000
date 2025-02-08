@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../../components/Card/Card';
-import styles from '../../pages/Benifits/Benifits.module.scss';
+import styles from '../styles/sections.module.scss';
 import { benefits } from '../../../public/data.json';
 import { BookOpen, Star, Award, Globe, Rocket, FileText, Lightbulb, Users } from 'lucide-react';
 
