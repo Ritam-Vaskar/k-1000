@@ -25,7 +25,7 @@ const AboutSection = () => (
           className={styles.fullLogo}
         />
       </motion.div>
-      <p className={styles.cardDescription}>
+      <p className={styles.cardDescription} style={{ marginLeft: '1rem' }}>
       The K-1000 Research Program is KIIT's flagship initiative to nurture the next generation of researchers and innovators. Our mission is to support 1000 exceptional students in pursuing cutting-edge research across various disciplines, fostering innovation and scientific excellence.
       </p>
     </div>

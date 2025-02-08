@@ -63,6 +63,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
+            style={{ fontSize: "3rem" }}
           >
             Join the <span>K-1000</span> Research Program
           </motion.h1>
@@ -96,13 +97,13 @@ const Hero = () => {
             Apply Now
           </motion.a>
 
-          <motion.button
+          {/* <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className={styles.secondaryButton}
           >
             Learn More
-          </motion.button>
+          </motion.button> */}
         </motion.div>
 
         {/* Goals Section */}
