@@ -1,30 +1,25 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { NavLink } from 'react-router-dom';
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  ChevronRight
-} from 'lucide-react';
-import styles from './Footer.module.scss';
+import React from "react";
+import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
+import { MapPin, Phone, Mail, ChevronRight } from "lucide-react";
+import styles from "./Footer.module.scss";
 
 const Footer = () => {
   const quickLinks = [
-    { title: 'Home', path: '/' },
-    { title: 'About Program', path: '/about' },
-    { title: 'Benefits', path: '/benefits' },
-    { title: 'Apply Now', path: '/apply' },
-    { title: 'Contact', path: '/contact' }
+    { title: "Home", path: "/" },
+    { title: "About Program", path: "/about" },
+    { title: "Benefits", path: "/benefits" },
+    { title: "Apply Now", path: "/apply" },
+    { title: "Contact", path: "/contact" },
   ];
 
   const researchAreas = [
-    { title: 'Engineering & Technology', href: '#' },
-    { title: 'Sciences & Applied Sciences', href: '#' },
-    { title: 'Management & Social Sciences', href: '#' },
-    { title: 'Medical & Health Sciences', href: '#' },
-    { title: 'Law & Public Policy', href: '#' },
-    { title: 'Sports & Tourism', href: '#' }
+    { title: "Engineering & Technology", href: "/reasearch-areas" },
+    { title: "Sciences & Applied Sciences", href: "/reasearch-areas" },
+    { title: "Management & Social Sciences", href: "/reasearch-areas" },
+    { title: "Medical & Health Sciences", href: "/reasearch-areas" },
+    { title: "Law & Public Policy", href: "/reasearch-areas" },
+    { title: "Sports & Tourism", href: "/reasearch-areas" },
   ];
 
   return (
@@ -32,25 +27,26 @@ const Footer = () => {
       <div className={styles.container}>
         <div className={styles.topSection}>
           {/* Logo and Description */}
-          <motion.div 
+          <motion.div
             className={styles.logoSection}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <img 
+            <img
               src="https://cdn.prod.website-files.com/663d1907e337de23e83c30b2/67a07ffa91f78ddf2b941175_KIIT-logo-HD.png"
               alt="KIIT Logo"
               className={styles.logo}
             />
             <p className={styles.description}>
-              The K-1000 Research Program is KIIT's flagship initiative fostering innovation 
-              and research excellence among undergraduate students.
+              The K-1000 Research Program is KIIT's flagship initiative
+              fostering innovation and research excellence among undergraduate
+              students.
             </p>
           </motion.div>
 
           {/* Quick Links */}
-          <motion.div 
+          <motion.div
             className={styles.linksSection}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -60,9 +56,11 @@ const Footer = () => {
             <ul>
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <NavLink 
-                    to={link.path} 
-                    className={({ isActive }) => isActive ? styles.activeLink : ""}
+                  <NavLink
+                    to={link.path}
+                    className={({ isActive }) =>
+                      isActive ? styles.activeLink : ""
+                    }
                   >
                     <ChevronRight size={16} />
                     {link.title}
@@ -73,7 +71,7 @@ const Footer = () => {
           </motion.div>
 
           {/* Research Areas */}
-          <motion.div 
+          <motion.div
             className={styles.linksSection}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -93,7 +91,7 @@ const Footer = () => {
           </motion.div>
 
           {/* Contact Information */}
-          <motion.div 
+          <motion.div
             className={styles.contactSection}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -103,8 +101,8 @@ const Footer = () => {
             <div className={styles.contactItem}>
               <MapPin className={styles.icon} size={20} />
               <div>
-                
-                KIIT University<br />
+                KIIT University
+                <br />
                 Bhubaneswar, <br />
                 Odisha 751024
               </div>
@@ -112,7 +110,9 @@ const Footer = () => {
 
             <div className={styles.contactItem}>
               <Phone className={styles.icon} size={20} />
-              <div>Ajit Kumar Pasayat <br /> +917008588187</div>
+              <div>
+                Ajit Kumar Pasayat <br /> +917008588187
+              </div>
             </div>
             <div className={styles.contactItem}>
               <Mail className={styles.icon} size={20} />
@@ -123,7 +123,9 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className={styles.bottomSection}>
-          <p>© {new Date().getFullYear()} KIIT University. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} KIIT University. All rights reserved.
+          </p>
           <div className={styles.bottomLinks}>
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
