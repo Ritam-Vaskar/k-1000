@@ -19,11 +19,12 @@ const Footer = () => {
   ];
 
   const researchAreas = [
-    { title: 'Computer Science', href: '#' },
-    { title: 'Biotechnology', href: '#' },
-    { title: 'Mechanical Engineering', href: '#' },
-    { title: 'Electronics', href: '#' },
-    { title: 'Civil Engineering', href: '#' }
+    { title: 'Engineering & Technology', href: '#' },
+    { title: 'Sciences & Applied Sciences', href: '#' },
+    { title: 'Management & Social Sciences', href: '#' },
+    { title: 'Medical & Health Sciences', href: '#' },
+    { title: 'Law & Public Policy', href: '#' },
+    { title: 'Sports & Tourism', href: '#' }
   ];
 
   return (
@@ -102,9 +103,10 @@ const Footer = () => {
             <div className={styles.contactItem}>
               <MapPin className={styles.icon} size={20} />
               <div>
-                KIIT Research Office<br />
-                Campus-5, KIIT University<br />
-                Bhubaneswar, Odisha 751024
+                
+                KIIT University<br />
+                Bhubaneswar, <br />
+                Odisha 751024
               </div>
             </div>
 
