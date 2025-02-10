@@ -112,7 +112,7 @@ const Footer = () => {
 
             <div className={styles.contactItem}>
               <Phone className={styles.icon} size={20} />
-              <div>+917008588187</div>
+              <div>Ajit Kumar Pasayat <br /> +917008588187</div>
             </div>
             <div className={styles.contactItem}>
               <Mail className={styles.icon} size={20} />
