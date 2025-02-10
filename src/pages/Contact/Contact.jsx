@@ -46,9 +46,10 @@ const Contact = () => {
             <div className={styles.contactItem}>
               <MapPin className={styles.icon} size={20} />
               <div>
-                KIIT Research Office <br />
-                Campus-5, KIIT University <br />
-                Bhubaneswar, Odisha 751024
+                
+                KIIT University <br />
+                Bhubaneswar,
+                Odisha 751024
               </div>
             </div>
 
