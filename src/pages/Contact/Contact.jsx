@@ -55,7 +55,8 @@ const Contact = () => {
 
             <div className={styles.contactItem}>
               <Phone className={styles.icon} size={20} />
-              <div>+91 70085 88187</div>
+              <div>Dr. Ajit Kumar Pasyat <br />
+              Asst. Prof., Computer Science  <br />+91 70085 88187</div>
             </div>
 
             <div className={styles.contactItem}>
