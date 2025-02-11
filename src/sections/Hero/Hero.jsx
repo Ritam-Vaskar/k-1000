@@ -65,7 +65,7 @@ const Hero = () => {
             transition={{ delay: 0.4 }}
             style={{ fontSize: "3rem" }}
           >
-            Join the <span>K-1000</span> Research Program
+            Join the <span>K-1000</span>, Student Research initiative
           </motion.h1>
 
           <motion.p
