@@ -64,10 +64,10 @@ const Benefits = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
-          The K-1000 Research Program provides a unique platform for students to
-          excel in research, innovation, collaboration, and training in a
-          competitive environment. Explore the benefits of being a part of this
-          prestigious initiative.
+          The K-1000 initiative is a research and development platform where
+          students can train, compete, publish research, and grow. It offers
+          opportunities in internships, placements, higher studies, and overall
+          skill enhancement.
         </motion.p>
 
         {/* Image Section */}

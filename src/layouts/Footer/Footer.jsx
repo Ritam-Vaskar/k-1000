@@ -9,6 +9,7 @@ const Footer = () => {
     { title: "Home", path: "/" },
     { title: "About Program", path: "/about" },
     { title: "Benefits", path: "/benefits" },
+    { title: "Branches", path: "/branches" },
     { title: "Apply Now", path: "/apply" },
     { title: "Contact", path: "/contact" },
   ];

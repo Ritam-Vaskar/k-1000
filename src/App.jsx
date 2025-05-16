@@ -14,6 +14,7 @@ import About from "./pages/About/About";
 import Benefits from "./pages/Benefits/Benefits";
 import Contact from "./pages/Contact/Contact";
 import ResearchAreas from "./pages/ResearchAreas/ResearchAreas";
+import Branches from "./pages/Branches/Branches";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -37,6 +38,7 @@ function App() {
         <Route path="/benefits" element={<Benefits />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/departments" element={<ResearchAreas />} />
+        <Route path="/branches" element={<Branches />} />
       </Routes>
       <Footer />
     </Router>
