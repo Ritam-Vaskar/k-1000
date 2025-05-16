@@ -14,12 +14,12 @@ const Footer = () => {
   ];
 
   const researchAreas = [
-    { title: "Engineering & Technology", href: "/reasearch-areas" },
-    { title: "Sciences & Applied Sciences", href: "/reasearch-areas" },
-    { title: "Management & Social Sciences", href: "/reasearch-areas" },
-    { title: "Medical & Health Sciences", href: "/reasearch-areas" },
-    { title: "Law & Public Policy", href: "/reasearch-areas" },
-    { title: "Sports & Tourism", href: "/reasearch-areas" },
+    { title: "Engineering & Technology", href: "/departments" },
+    { title: "Sciences & Applied Sciences", href: "/departments" },
+    { title: "Management & Social Sciences", href: "/departments" },
+    { title: "Medical & Health Sciences", href: "/departments" },
+    { title: "Law & Public Policy", href: "/departments" },
+    { title: "Sports & Tourism", href: "/departments" },
   ];
 
   return (
@@ -77,7 +77,7 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h3>Research Areas</h3>
+            <h3>Departments</h3>
             <ul>
               {researchAreas.map((area, index) => (
                 <li key={index}>

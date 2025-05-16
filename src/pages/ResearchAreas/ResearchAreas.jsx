@@ -81,7 +81,7 @@ const ResearchArea = () => {
 
   return (
     <div ref={ref} className={styles.researchArea}>
-      <h2 className={styles.title}>Research Areas at KIIT</h2>
+      <h2 className={styles.title}>Departments at KIIT</h2>
       {categories.map((category, index) => (
         <motion.div
           key={index}

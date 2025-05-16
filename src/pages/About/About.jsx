@@ -24,7 +24,7 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          About the <span>K-1000</span> Research Program
+          About <span>K-1000</span>
         </motion.h1>
 
         <motion.p
@@ -33,10 +33,11 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
-          The K-1000 Research Program is a pioneering initiative by KIIT aimed
-          at fostering a strong research culture among undergraduate students.
-          The program is designed to provide mentorship, skill-building
-          opportunities, and real-world research exposure.
+          K-1000 is KIIT’s official Research and Development (R&D) organization,
+          aimed at supporting 1000 exceptional students in cutting-edge
+          research. It focuses on skill development in a competitive environment
+          and encourages building projects that solve real-world problems across
+          various domains.
         </motion.p>
 
         {/* Image Section */}

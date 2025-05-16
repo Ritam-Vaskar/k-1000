@@ -26,10 +26,15 @@ const AboutSection = () => (
         />
       </motion.div>
       <p className={styles.cardDescription} style={{ marginLeft: "1rem" }}>
-        The K-1000 Research Program is KIIT's flagship initiative to nurture the
-        next generation of researchers and innovators. Our mission is to support
-        1000 exceptional students in pursuing cutting-edge research across
-        various disciplines, fostering innovation and scientific excellence.
+        K-1000 is the official Research and Development (R&D)
+        organization/program of KIIT, established to foster a culture of
+        innovation, research, and real-world problem-solving. Its mission is to
+        support 1000 exceptional students in pursuing cutting-edge research,
+        while simultaneously training and enhancing their skills in a
+        competitive and collaborative environment. The program encourages
+        students to develop impactful projects that address real-world
+        challenges across both technical and non-technical domains, thereby
+        contributing to scientific, technological, and societal advancement.
       </p>
     </div>
   </section>

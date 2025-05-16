@@ -33,6 +33,10 @@ const benefits = [
     title: "International Exposure",
     desc: "Participate in research collaborations with top institutions worldwide.",
   },
+  {
+    title: "Training in a Competitive Environment",
+    desc: "Develop skills and knowledge through rigorous training in a competitive and growth-oriented setting.",
+  },
 ];
 
 const Benefits = () => {
@@ -61,8 +65,9 @@ const Benefits = () => {
           transition={{ delay: 0.4 }}
         >
           The K-1000 Research Program provides a unique platform for students to
-          excel in research, innovation, and collaboration. Explore the benefits
-          of being a part of this prestigious initiative.
+          excel in research, innovation, collaboration, and training in a
+          competitive environment. Explore the benefits of being a part of this
+          prestigious initiative.
         </motion.p>
 
         {/* Image Section */}
