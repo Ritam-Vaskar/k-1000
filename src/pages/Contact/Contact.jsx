@@ -39,24 +39,26 @@ const Contact = () => {
           </h1>
 
           <p className={styles.description}>
-            Reach out to us for any queries regarding the K-1000 Research Program.
+            Reach out to us for any queries regarding the K-1000 Research
+            Program.
           </p>
 
           <div className={styles.contactInfo}>
             <div className={styles.contactItem}>
               <MapPin className={styles.icon} size={20} />
               <div>
-                
                 KIIT University <br />
-                Bhubaneswar,
-                Odisha 751024
+                Bhubaneswar, Odisha 751024
               </div>
             </div>
 
             <div className={styles.contactItem}>
               <Phone className={styles.icon} size={20} />
-              <div>Dr. Ajit Kumar Pasyat <br />
-              Asst. Prof., Computer Science  <br />+91 70085 88187</div>
+              <div>
+                Dr. Ajit Kumar Pasyat <br />
+                Asst. Prof., Computer Science  <br />
+                +91 70085 88187
+              </div>
             </div>
 
             <div className={styles.contactItem}>

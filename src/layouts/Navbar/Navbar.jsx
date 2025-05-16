@@ -1,36 +1,37 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
-import styles from './Navbar.module.scss';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Benefits', path: '/benefits' },
-    { name: 'Research Areas', path: '/reasearch-areas' },
-    { name: 'Apply', path: '/apply' },
-    { name: 'Contact', path: '/contact' },
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Benefits", path: "/benefits" },
+    { name: "Research Areas", path: "/reasearch-areas" },
+    { name: "Apply", path: "/apply" },
+    { name: "Contact", path: "/contact" },
   ];
 
   const menuVariants = {
     open: { opacity: 1, x: 0 },
-    closed: { opacity: 0, x: "100%" }
+    closed: { opacity: 0, x: "100%" },
   };
 
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <div className={styles.nav}>
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          >
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             <div className={styles.logoDiv}>
-              <img className={styles.logoimg} src="https://cdn.prod.website-files.com/663d1907e337de23e83c30b2/67a07ffa91f78ddf2b941175_KIIT-logo-HD.png" alt="KiiT" />
+              <img
+                className={styles.logoimg}
+                src="https://cdn.prod.website-files.com/663d1907e337de23e83c30b2/67a07ffa91f78ddf2b941175_KIIT-logo-HD.png"
+                alt="KiiT"
+              />
               <span className={styles.logo}>K-1000</span>
             </div>
           </motion.div>
@@ -45,7 +46,9 @@ const Navbar = () => {
               >
                 <NavLink
                   to={item.path}
-                  className={({ isActive }) => isActive ? styles.activeMenuItem : styles.menuItem}
+                  className={({ isActive }) =>
+                    isActive ? styles.activeMenuItem : styles.menuItem
+                  }
                 >
                   {item.name}
                 </NavLink>
@@ -69,7 +72,7 @@ const Navbar = () => {
           animate={isOpen ? "open" : "closed"}
           variants={menuVariants}
           className={styles.menuMobile}
-          style={{ display: isOpen ? 'block' : 'none' }}
+          style={{ display: isOpen ? "block" : "none" }}
         >
           {navItems.map((item) => (
             <motion.div
@@ -79,7 +82,9 @@ const Navbar = () => {
             >
               <NavLink
                 to={item.path}
-                className={({ isActive }) => isActive ? styles.activeMobileItem : styles.mobileItem}
+                className={({ isActive }) =>
+                  isActive ? styles.activeMobileItem : styles.mobileItem
+                }
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}

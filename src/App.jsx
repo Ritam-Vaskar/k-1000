@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { useEffect } from "react";
 import "./App.scss";
 import ApplicationForm from "./components/Form/ApplicationForm";
@@ -29,7 +34,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/apply" element={<ApplicationForm />} />
         <Route path="/about" element={<About />} />
-        <Route path="/benefits" element={<Benefits/>} />
+        <Route path="/benefits" element={<Benefits />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/reasearch-areas" element={<ResearchAreas />} />
       </Routes>

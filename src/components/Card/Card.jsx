@@ -1,9 +1,9 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import styles from './Card.module.scss';
+import React from "react";
+import { motion } from "framer-motion";
+import styles from "./Card.module.scss";
 
 const Card = ({ icon: Icon, title, description }) => (
-  <motion.div 
+  <motion.div
     className={styles.card}
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}

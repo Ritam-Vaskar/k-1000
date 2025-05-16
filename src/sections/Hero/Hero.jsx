@@ -8,7 +8,7 @@ const Hero = () => {
   const images = [
     "https://crf.kiit.ac.in/wp-content/uploads/2020/09/KIIT-Campus-2.jpg",
     "https://crf.kiit.ac.in/wp-content/uploads/2022/01/KIIT-Research-Development-1.jpg",
-    "https://cdn.prod.website-files.com/67aa2520eb413205a7dac909/67aa3147b53442d24541b355_KIIT-University-Bhubaneswar.jpeg"
+    "https://cdn.prod.website-files.com/67aa2520eb413205a7dac909/67aa3147b53442d24541b355_KIIT-University-Bhubaneswar.jpeg",
   ];
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Hero = () => {
     { number: "200+", label: "Research Projects" },
     { number: "100+", label: "Publications" },
     { number: "50+", label: "Patents Filed" },
-    { number: "50+", label: "International Collaborations" }
+    { number: "50+", label: "International Collaborations" },
   ];
 
   return (
@@ -114,7 +114,6 @@ const Hero = () => {
           transition={{ delay: 1 }}
         >
           <div className={styles.goal}>
-            
             <div className={styles.goalText}>🚀 Our Goals</div>
           </div>
         </motion.div>

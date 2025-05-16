@@ -1,6 +1,13 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { FaLaptopCode, FaUniversity, FaMicroscope, FaHeartbeat, FaGavel, FaDumbbell } from "react-icons/fa";
+import {
+  FaLaptopCode,
+  FaUniversity,
+  FaMicroscope,
+  FaHeartbeat,
+  FaGavel,
+  FaDumbbell,
+} from "react-icons/fa";
 import styles from "./ResearchAreas.module.scss";
 
 const categories = [
@@ -14,8 +21,8 @@ const categories = [
       "School of Electronics Engineering",
       "School of Mechanical Engineering",
       "School of Electrical Engineering",
-      "School of Chemical Engineering"
-    ]
+      "School of Chemical Engineering",
+    ],
   },
   {
     title: "Sciences & Applied Sciences",
@@ -23,8 +30,8 @@ const categories = [
     schools: [
       "School of Biotechnology",
       "School of Applied Sciences",
-      "School of Architecture & Planning"
-    ]
+      "School of Architecture & Planning",
+    ],
   },
   {
     title: "Management & Social Sciences",
@@ -37,8 +44,8 @@ const categories = [
       "Department of Sociology",
       "Department of Library and Information Science",
       "Department of Humanities (English)",
-      "Department of Language & Literature"
-    ]
+      "Department of Language & Literature",
+    ],
   },
   {
     title: "Medical & Health Sciences",
@@ -50,19 +57,22 @@ const categories = [
       "School of Public Health",
       "School of Pharmacy",
       "School of Physiotherapy",
-      "School of Yoga & Naturopathy"
-    ]
+      "School of Yoga & Naturopathy",
+    ],
   },
   {
     title: "Law & Public Policy",
     icon: <FaGavel />,
-    schools: ["School of Law", "School of Public Policy"]
+    schools: ["School of Law", "School of Public Policy"],
   },
   {
     title: "Sports & Tourism",
     icon: <FaDumbbell />,
-    schools: ["School of Sports and Yogic Sciences", "School of Hospitality and Tourism"]
-  }
+    schools: [
+      "School of Sports and Yogic Sciences",
+      "School of Hospitality and Tourism",
+    ],
+  },
 ];
 
 const ResearchArea = () => {

@@ -111,8 +111,8 @@ const Footer = () => {
             <div className={styles.contactItem}>
               <Phone className={styles.icon} size={20} />
               <div>
-              Dr. Ajit Kumar Pasyat <br />
-              Asst. Prof., Computer Science  <br /> +917008588187
+                Dr. Ajit Kumar Pasyat <br />
+                Asst. Prof., Computer Science  <br /> +917008588187
               </div>
             </div>
             <div className={styles.contactItem}>

@@ -9,8 +9,8 @@ const Home = () => {
     <div>
       <Hero />
       <AboutSection />
-    <BenefitsSection />
-    <SelectionProcessSection />
+      <BenefitsSection />
+      <SelectionProcessSection />
     </div>
   );
 };

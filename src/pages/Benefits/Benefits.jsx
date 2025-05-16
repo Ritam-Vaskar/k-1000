@@ -5,16 +5,34 @@ import styles from "./Benefits.module.scss";
 const images = [
   "https://cdn.prod.website-files.com/67aa2520eb413205a7dac909/67aa3147b53442d24541b355_KIIT-University-Bhubaneswar.jpeg",
   "https://cdn.prod.website-files.com/67aa2520eb413205a7dac909/67aa32340b3a8697b5760399_KIIT-Campus-Front-Library-1200x416.jpg",
-  "https://scontent.fbbi2-1.fna.fbcdn.net/v/t39.30808-6/473190529_582937564531623_4156672289478721110_n.jpg"
+  "https://scontent.fbbi2-1.fna.fbcdn.net/v/t39.30808-6/473190529_582937564531623_4156672289478721110_n.jpg",
 ];
 
 const benefits = [
-  { title: "Early Research Exposure", desc: "Get involved in research from the first year, fostering an inquisitive mindset." },
-  { title: "Mentorship & Guidance", desc: "Work closely with experienced faculty mentors who guide your research journey." },
-  { title: "Skill Development", desc: "Gain hands-on experience in research methodologies, data analysis, and problem-solving." },
-  { title: "Publication & Patents", desc: "Opportunity to publish research papers and file patents through university support." },
-  { title: "Networking & Collaborations", desc: "Connect with like-minded peers, researchers, and industry experts." },
-  { title: "International Exposure", desc: "Participate in research collaborations with top institutions worldwide." }
+  {
+    title: "Early Research Exposure",
+    desc: "Get involved in research from the first year, fostering an inquisitive mindset.",
+  },
+  {
+    title: "Mentorship & Guidance",
+    desc: "Work closely with experienced faculty mentors who guide your research journey.",
+  },
+  {
+    title: "Skill Development",
+    desc: "Gain hands-on experience in research methodologies, data analysis, and problem-solving.",
+  },
+  {
+    title: "Publication & Patents",
+    desc: "Opportunity to publish research papers and file patents through university support.",
+  },
+  {
+    title: "Networking & Collaborations",
+    desc: "Connect with like-minded peers, researchers, and industry experts.",
+  },
+  {
+    title: "International Exposure",
+    desc: "Participate in research collaborations with top institutions worldwide.",
+  },
 ];
 
 const Benefits = () => {
@@ -80,7 +98,11 @@ const Benefits = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <img src={images[1]} alt="Research Development" className={styles.image} />
+          <img
+            src={images[1]}
+            alt="Research Development"
+            className={styles.image}
+          />
         </motion.div>
 
         <motion.a

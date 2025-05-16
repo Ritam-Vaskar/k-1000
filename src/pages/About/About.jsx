@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import styles from "./About.module.scss";
 
 const images = [
-  
   "https://crf.kiit.ac.in/wp-content/uploads/2022/01/KIIT-Research-Development-1.jpg",
   "https://sustainability.kiit.ac.in/wp-content/uploads/2023/07/crf.jpg",
   "https://crf.kiit.ac.in/wp-content/uploads/2020/09/KIIT-Campus-2.jpg",
@@ -34,31 +33,29 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
-          The K-1000 Research Program is a pioneering initiative by KIIT aimed at
-          fostering a strong research culture among undergraduate students. The
-          program is designed to provide mentorship, skill-building
+          The K-1000 Research Program is a pioneering initiative by KIIT aimed
+          at fostering a strong research culture among undergraduate students.
+          The program is designed to provide mentorship, skill-building
           opportunities, and real-world research exposure.
         </motion.p>
 
         {/* Image Section */}
         <div className={styles.imageContainer}>
-        <motion.div
-          className={styles.imageWrapper}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <img src={images[0]} alt="KIIT Campus" className={styles.image} />
-        </motion.div>
+          <motion.div
+            className={styles.imageWrapper}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <img src={images[0]} alt="KIIT Campus" className={styles.image} />
+          </motion.div>
 
-        <motion.div
-          className={styles.imageWrapper}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          
-        </motion.div>
+          <motion.div
+            className={styles.imageWrapper}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          ></motion.div>
         </div>
 
         <motion.div
@@ -82,7 +79,6 @@ const About = () => {
         </motion.div>
 
         {/* Image Section */}
-        
 
         <motion.p
           className={styles.subText}
@@ -103,7 +99,11 @@ const About = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
         >
-          <img src={images[2]} alt="KIIT Research Development" className={styles.image} />
+          <img
+            src={images[2]}
+            alt="KIIT Research Development"
+            className={styles.image}
+          />
         </motion.div>
 
         <motion.a

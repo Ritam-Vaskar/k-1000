@@ -1,7 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import styles from '../styles/sections.module.scss';
-import { selectionSteps } from '../../../public/data.json';
+import React from "react";
+import { motion } from "framer-motion";
+import styles from "../styles/sections.module.scss";
+import { selectionSteps } from "../../../public/data.json";
 
 const SelectionProcessSection = () => (
   <section className={styles.section}>
@@ -9,7 +9,7 @@ const SelectionProcessSection = () => (
       <h2 className={styles.sectionTitle}>How to Get Selected?</h2>
       <div className={styles.steps}>
         {selectionSteps.map((step, index) => (
-          <motion.div 
+          <motion.div
             key={index}
             className={styles.step}
             initial={{ opacity: 0, x: -20 }}

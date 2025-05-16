@@ -1,8 +1,17 @@
-import React from 'react';
-import Card from '../../components/Card/Card';
-import styles from '../styles/sections.module.scss';
-import { benefits } from '../../../public/data.json';
-import { BookOpen, Star, Award, Globe, Rocket, FileText, Lightbulb, Users } from 'lucide-react';
+import React from "react";
+import Card from "../../components/Card/Card";
+import styles from "../styles/sections.module.scss";
+import { benefits } from "../../../public/data.json";
+import {
+  BookOpen,
+  Star,
+  Award,
+  Globe,
+  Rocket,
+  FileText,
+  Lightbulb,
+  Users,
+} from "lucide-react";
 
 // Map icon names from JSON to Lucide components
 const iconMap = {
@@ -13,7 +22,7 @@ const iconMap = {
   Award: Award,
   Globe: Globe,
   Lightbulb: Lightbulb,
-  Users: Users
+  Users: Users,
 };
 
 const BenefitsSection = () => (
@@ -22,11 +31,11 @@ const BenefitsSection = () => (
       <h2 className={styles.sectionTitle}>Benefits and Perks</h2>
       <div className={styles.cardsGrid}>
         {benefits.map((benefit, index) => {
-          const IconComponent = iconMap[benefit.icon] || Lightbulb; 
+          const IconComponent = iconMap[benefit.icon] || Lightbulb;
           return (
-            <Card 
+            <Card
               key={index}
-              icon={IconComponent} 
+              icon={IconComponent}
               title={benefit.title}
               description={benefit.description}
             />

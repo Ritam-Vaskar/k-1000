@@ -1,14 +1,15 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import styles from './ApplicationForm.module.scss';
+import React from "react";
+import { motion } from "framer-motion";
+import styles from "./ApplicationForm.module.scss";
 
 const ApplicationForm = () => {
-  const GOOGLE_FORM_LINK = 'https://docs.google.com/forms/d/e/1FAIpQLScuql7qJv9M2FmKDrZQONN1wC6i9FNagM76gvb3cktOI3SjCQ/viewform?usp=header';
+  const GOOGLE_FORM_LINK =
+    "https://docs.google.com/forms/d/e/1FAIpQLScuql7qJv9M2FmKDrZQONN1wC6i9FNagM76gvb3cktOI3SjCQ/viewform?usp=header";
 
   return (
     <section className={styles.formSection}>
       <div className={styles.container}>
-        <motion.h2 
+        <motion.h2
           className={styles.title}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -16,18 +17,20 @@ const ApplicationForm = () => {
         >
           Apply for K-1000 Program
         </motion.h2>
-        
-        <motion.p 
+
+        <motion.p
           className={styles.description}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          The K-1000 Program is an excellent opportunity for students to engage in research and academic excellence. 
-          If you have a passion for innovation and learning, apply now to be part of this prestigious program.
+          The K-1000 Program is an excellent opportunity for students to engage
+          in research and academic excellence. If you have a passion for
+          innovation and learning, apply now to be part of this prestigious
+          program.
         </motion.p>
-        
-        <motion.p 
+
+        <motion.p
           className={styles.description}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -35,11 +38,11 @@ const ApplicationForm = () => {
         >
           Click the button below to fill out the official application form.
         </motion.p>
-        
-        <motion.a 
-          href={GOOGLE_FORM_LINK} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+
+        <motion.a
+          href={GOOGLE_FORM_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
           className={styles.applyButton}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
