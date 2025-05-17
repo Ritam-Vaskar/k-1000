@@ -87,7 +87,7 @@ const Hero = () => {
           transition={{ delay: 0.8 }}
         >
           <motion.a
-            href="https://docs.google.com/forms/d/e/1FAIpQLScuql7qJv9M2FmKDrZQONN1wC6i9FNagM76gvb3cktOI3SjCQ/viewform?usp=header"
+            href="https://forms.gle/irg7nzkhh3tWnpib8"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}

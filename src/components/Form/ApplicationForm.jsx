@@ -3,8 +3,7 @@ import { motion } from "framer-motion";
 import styles from "./ApplicationForm.module.scss";
 
 const ApplicationForm = () => {
-  const GOOGLE_FORM_LINK =
-    "https://docs.google.com/forms/d/e/1FAIpQLScuql7qJv9M2FmKDrZQONN1wC6i9FNagM76gvb3cktOI3SjCQ/viewform?usp=header";
+  const GOOGLE_FORM_LINK = "https://forms.gle/irg7nzkhh3tWnpib8";
 
   return (
     <section className={styles.formSection}>
