@@ -40,9 +40,10 @@ const Footer = () => {
               className={styles.logo}
             />
             <p className={styles.description}>
-              The K-1000 Research Program is KIIT's flagship initiative
-              fostering innovation and research excellence among undergraduate
-              students.
+              K-1000 is KIIT's premier R&D initiative, empowering 1000
+              exceptional students to engage in innovative, skill-driven
+              research and develop solutions to real-world problems across
+              diverse domains.
             </p>
           </motion.div>
 
