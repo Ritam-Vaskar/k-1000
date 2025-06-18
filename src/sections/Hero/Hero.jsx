@@ -65,7 +65,7 @@ const Hero = () => {
             transition={{ delay: 0.4 }}
             style={{ fontSize: "3rem" }}
           >
-            Join the <span>K-1000</span>, Student Research initiative
+            Join the <span>K-1000</span>, Student R&D Initiative
           </motion.h1>
 
           <motion.p
@@ -75,8 +75,8 @@ const Hero = () => {
             transition={{ delay: 0.6 }}
           >
             Embark on a journey of innovation and discovery with KIIT's premier
-            research initiative. Shape the future through groundbreaking
-            research and global collaborations.
+            research and development initiative. Shape the future through groundbreaking
+            projects and global collaborations.
           </motion.p>
         </div>
 
