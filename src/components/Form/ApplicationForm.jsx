@@ -1,9 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "./ApplicationForm.module.scss";
+import cardStyles from "../../sections/styles/sections.module.scss";
+import Card from "../../components/Card/Card";
+import { socials } from "../../../public/data.json";
+import { FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa6";
 
 const ApplicationForm = () => {
   const GOOGLE_FORM_LINK = "https://forms.gle/irg7nzkhh3tWnpib8";
+
+  const iconMap = {
+    linkedin: FaLinkedinIn,
+    instagram: FaInstagram,
+    whatsapp: FaWhatsapp,
+  };
 
   return (
     <section className={styles.formSection}>
@@ -18,7 +28,7 @@ const ApplicationForm = () => {
         </motion.h2>
 
         <motion.p
-          className={styles.description}
+          className={`${styles.description} text-lg text-center max-w-[800px]`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -30,9 +40,9 @@ const ApplicationForm = () => {
         </motion.p>
 
         <motion.p
-          className={styles.description}
+          className={`${styles.description} text-lg text-center`}
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           Click the button below to fill out the official application form.
@@ -48,6 +58,22 @@ const ApplicationForm = () => {
         >
           <button className={styles.submitButton}>Apply Now</button>
         </motion.a>
+
+        <div className={`${cardStyles.cardsGrid} w-full px-5`}>
+          {socials.map((social, index) => {
+            const IconComponent = iconMap[social.icon];
+            return (
+              <a href={social.link} target="_blank" rel="noopener noreferrer">
+                <Card
+                  key={index}
+                  icon={IconComponent}
+                  title={social.title}
+                  description={social.description}
+                />
+              </a>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
