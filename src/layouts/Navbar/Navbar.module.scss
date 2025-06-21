@@ -2,13 +2,13 @@
   width: 100%;
   position: fixed;
   top: 0;
-  background-color: rgba(18, 18, 18, 0.95);
-  backdrop-filter: blur(8px);
+  // background-color: rgba(18, 18, 18, 0.95);
+  // backdrop-filter: blur(8px);
   z-index: 50;
 }
 
 .logoimg {
-  width: 50px;
+  height: 38px;
 }
 
 .logoDiv {
@@ -49,11 +49,19 @@
 .menuItem {
   color: #e5e5e5;
   text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
   transition: color 0.3s ease;
 
   &:hover {
     color: #17d059;
   }
+}
+
+.activeMenuItem {
+  color: #17d059;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
 .menuButton {
@@ -76,7 +84,6 @@
 .menuMobile {
   padding: 1rem;
   background-color: rgba(18, 18, 18, 0.95);
-
   @media (min-width: 768px) {
     display: none;
   }
@@ -85,12 +92,15 @@
 .activeMobileItem {
   padding: 1.5rem 0.75rem;
   font-weight: bold;
+  font-size: 1.1rem;
+  color: #17d059;
 }
 
 .mobileItem {
   display: block;
   padding: 0.75rem;
   color: #e5e5e5;
+  font-size: 1.1rem;
   text-decoration: none;
   transition: color 0.3s ease;
 

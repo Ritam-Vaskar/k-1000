@@ -6,9 +6,9 @@ const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const images = [
-    "https://crf.kiit.ac.in/wp-content/uploads/2020/09/KIIT-Campus-2.jpg",
-    "https://crf.kiit.ac.in/wp-content/uploads/2022/01/KIIT-Research-Development-1.jpg",
-    "https://cdn.prod.website-files.com/67aa2520eb413205a7dac909/67aa3147b53442d24541b355_KIIT-University-Bhubaneswar.jpeg",
+    "/Hero Section/hero-1.jpg",
+    "/Hero Section/hero-2.jpg",
+    "/Hero Section/hero-3.jpeg",
   ];
 
   useEffect(() => {
@@ -75,8 +75,8 @@ const Hero = () => {
             transition={{ delay: 0.6 }}
           >
             Embark on a journey of innovation and discovery with KIIT's premier
-            research and development initiative. Shape the future through groundbreaking
-            projects and global collaborations.
+            research and development initiative. Shape the future through
+            groundbreaking projects and global collaborations.
           </motion.p>
         </div>
 
@@ -87,12 +87,11 @@ const Hero = () => {
           transition={{ delay: 0.8 }}
         >
           <motion.a
-            href="https://forms.gle/irg7nzkhh3tWnpib8"
-            target="_blank"
+            href="/apply"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className={styles.primaryButton}
+            className={`${styles.primaryButton} hover:text-white text-lg font-bold`}
           >
             Apply Now
           </motion.a>

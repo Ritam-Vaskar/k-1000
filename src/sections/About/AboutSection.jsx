@@ -26,8 +26,7 @@ const AboutSection = () => (
         />
       </motion.div>
       <p
-        className={`${styles.cardDescription} text-balance text-lg text-center -mt-5`}
-        style={{ marginLeft: "4rem", marginRight: "4rem" }}
+        className={`${styles.cardDescription} text-lg text-center text-balance -mt-5 md:mx-[4rem] mx-[1rem] leading-4`}
       >
         K-1000 is the official Research and Development (R&D)
         organization/program of KIIT, established to foster a culture of

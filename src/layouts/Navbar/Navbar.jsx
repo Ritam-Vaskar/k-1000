@@ -23,17 +23,16 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={styles.navbar}>
+    <nav className={`${styles.navbar} backdrop-blur-3xl bg-black/10 shadow-xl py-1.5 overflow-hidden`}>
       <div className={styles.container}>
         <div className={styles.nav}>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             <div className={styles.logoDiv}>
               <img
                 className={styles.logoimg}
-                src="https://cdn.prod.website-files.com/663d1907e337de23e83c30b2/67a07ffa91f78ddf2b941175_KIIT-logo-HD.png"
-                alt="KiiT"
+                src="/logo-horizontal.png"
+                alt="K-1000 Horizontal Logo"
               />
-              <span className={styles.logo}>K-1000</span>
             </div>
           </motion.div>
 
@@ -72,7 +71,7 @@ const Navbar = () => {
           initial="closed"
           animate={isOpen ? "open" : "closed"}
           variants={menuVariants}
-          className={styles.menuMobile}
+          className={styles.menux}
           style={{ display: isOpen ? "block" : "none" }}
         >
           {navItems.map((item) => (

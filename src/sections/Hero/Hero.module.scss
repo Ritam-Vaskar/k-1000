@@ -97,7 +97,7 @@
 .primaryButton {
   background-color: #17d059;
   color: #121212;
-  padding: 1rem 2.5rem;
+  padding: 0.8rem 2.5rem;
   border-radius: 0.5rem;
   font-weight: bold;
   border: none;
@@ -134,6 +134,7 @@
 
 .statItem {
   text-align: center;
+  justify-items: flex-start;
 }
 
 .statNumber {

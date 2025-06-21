@@ -19,11 +19,10 @@
 }
 
 .logoSection {
-  .logo {
-    max-width: 100px;
-    height: auto;
-    margin-bottom: 1.5rem;
-  }
+  // .logo {
+  //   max-width: 100px;
+  //   height: auto;
+  // }
 
   .description {
     color: #a0a0a0;
@@ -68,12 +67,14 @@
   h3 {
     color: #17d059;
     margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
   }
   .contactItem {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.7rem;
     color: #a0a0a0;
 
     .icon {
