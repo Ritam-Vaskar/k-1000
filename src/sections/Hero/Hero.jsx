@@ -19,10 +19,10 @@ const Hero = () => {
   }, []);
 
   const stats = [
-    { number: "200+", label: "Research Projects" },
-    { number: "100+", label: "Publications" },
-    { number: "50+", label: "Patents Filed" },
-    { number: "50+", label: "International Collaborations" },
+    { number: "100+", label: "Projects" },
+    { number: "50+", label: "Publications" },
+    { number: "20+", label: "Patents Filed" },
+    { number: "20+", label: "Collaborations" },
   ];
 
   return (
@@ -65,7 +65,7 @@ const Hero = () => {
             transition={{ delay: 0.4 }}
             style={{ fontSize: "3rem" }}
           >
-            Join the <span>K-1000</span>, Student R&D Initiative
+            Join <span>K-1000</span>
           </motion.h1>
 
           <motion.p
@@ -81,7 +81,7 @@ const Hero = () => {
         </div>
 
         <motion.div
-          className={styles.buttonsWrapper}
+          className={`${styles.buttonsWrapper} -mt-10`}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
