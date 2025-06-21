@@ -42,7 +42,7 @@ const Footer = () => {
                 className={`h-[65px]`}
               />
               <img
-                src="/logo.png"
+                src="/logo-square.png"
                 alt="K-1000 Logo"
                 className={`h-[65px]`}
               />
