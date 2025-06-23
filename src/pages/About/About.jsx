@@ -221,7 +221,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            Prof Achyuta Samanta’s life story reads like a powerful saga of
+            Prof. Dr. Achyuta Samanta’s life story reads like a powerful saga of
             grit, determination, and social responsibility. Born and brought up
             in poverty in a remote village in Odisha, he was dealt a cruel blow
             at the tender age of four when he lost his father, after which his
