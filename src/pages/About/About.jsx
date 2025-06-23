@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "./About.module.scss";
 
 // const images = [
@@ -13,16 +13,22 @@ const members = [
     name: "Prof. Dr. Saranjit Singh",
     position: "Vice Chancellor",
     image: "/About Page/member-1.jpg",
+    description:
+      "Prof. (Dr.) Saranjit Singh received his Ph.D. in Production Engineering from BIT Mesra, M.Tech. from IIT Varanasi (formerly IT-BHU), and B.E. in Mechanical Engineering from Savitribai Phule Pune University. With extensive teaching and research experience, his interests span material processing technologies, metal forming of advanced materials like sintered and foam composites, cleaner manufacturing, DFX methodologies, and quality management. He has guided 5 Ph.D. scholars and 25 Master’s dissertations and published over 100 research papers in reputed national and international journals and conferences. He has authored three books in the area of material processing and is a Fellow of the Institution of Engineers (India). At KIIT, he has held several senior administrative roles, including Dean (Training & Placements), Director (Industry Engagements), and Dean of the School of Mechanical Engineering. Prior to joining KIIT, he served as Associate Professor in the Department of Production Engineering at BIT Mesra. He is currently a Professor at the School of Mechanical Engineering, KIIT, where he continues to contribute actively to research and academic development.",
   },
   {
     name: "Prof. Dr. Jnyana Ranjan Mohanty",
     position: "Registrar",
     image: "/About Page/member-2.jpg",
+    description:
+      "Dr. Jnyana Ranjan Mohanty received his Ph.D. degree in Computer Science from Utkal University, Bhubaneswar in the year 2008. He has more than 28 years of teaching experience (UG & PG levels). He joined KIIT Deemed to be University, Bhubaneswar in July 1997 and has served KIIT  in different administrative capacities too (as Associate Dean &amp; Controller of Examinations). Presently, he is the Registrar of KIIT Deemed to be University. He is actively engaged in research work and has a number of Ph.D. scholars under his guidance. He has authored books and has to his credit innumerable publications in reputed International Scopus/ SCI indexed journals and in International Conference proceedings. He has also edited books published by Springer and  IJCA Volumes. He has conducted several conferences and workshops as the organizing chair/ program chair. His research interests include Queuing Theory, Computational Intelligence, and Cloud Computing.",
   },
   {
     name: "Dr. Ajit Kumar Pasayat",
     position: "Faculty Incharge",
     image: "/About Page/member-3.jpg",
+    description:
+      "Dr. Ajit Kumar Pasayat is an Assistant Professor at the School of Computer Engineering, KIIT Deemed to be University, Bhubaneswar, India. He holds a Ph.D. and M.Tech in Computer Science and Engineering from IIT Kharagpur. His research interests include Machine Learning, Data Analytics, and Artificial Intelligence. Dr. Pasayat has published extensively in reputed international journals and conferences and is actively involved in interdisciplinary research projects. He also serves as a reviewer for leading journals and conferences, contributing to the advancement of computing technologies through both academic research and practical, real-world applications.",
   },
 ];
 
@@ -42,6 +48,22 @@ const stats = [
 ];
 
 const About = () => {
+  const [selectedMember, setSelectedMember] = useState(null);
+  const [showExpandedContent, setShowExpandedContent] = useState(false);
+
+  // Handle card click: show expanded card immediately, fade out others, then show content
+  const handleCardClick = (index) => {
+    setSelectedMember(index);
+    setShowExpandedContent(false);
+    setTimeout(() => setShowExpandedContent(true), 400); // show content after others fade out
+  };
+
+  // Handle collapse: hide content, then remove expanded card
+  const handleCollapse = () => {
+    setShowExpandedContent(false);
+    setTimeout(() => setSelectedMember(null), 250); // match exit duration
+  };
+
   return (
     <div className={styles.about}>
       <div className={styles.overlay} />
@@ -215,7 +237,7 @@ const About = () => {
 
       {/* Members Section */}
       <motion.h1
-        className={`text-2xl ${styles.title} text-center w-full tracking-wide z-10 mt-4 px-4`}
+        className={`text-2xl ${styles.title} text-center w-full tracking-wide z-10 mt-4 px-4 text-balance`}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
@@ -225,25 +247,90 @@ const About = () => {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="flex flex-wrap items-center justify-evenly mt-11 min-[800px]:px-12 mb-16 px-8 w-full z-10 gap-4"
+        className="flex flex-wrap items-start justify-evenly mt-11 min-[800px]:px-12 mb-16 px-5 w-full z-10 gap-4"
+        style={{ minHeight: selectedMember === null ? undefined : 0 }} // adjust 400 to match your grid height
       >
-        {members.map((member, index) => (
+        {selectedMember === null ? (
+          members.map((member, index) => (
+            <motion.div
+              key={index}
+              className="flex flex-col items-center justify-center text-center p-4 group cursor-pointer"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0, transition: { duration: 0.22 } }}
+              transition={{ duration: 0.3, delay: 0.1 * index }}
+              layout
+              onClick={() => handleCardClick(index)}
+            >
+              <motion.div
+                className="flex flex-col items-center justify-center"
+                layoutId={`member-image-container-${index}`}
+                layout
+              >
+                <motion.img
+                  src={member.image}
+                  alt={member.name}
+                  className="max-w-[150px] aspect-square rounded-full mb-2 object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out group-hover:shadow-[#17d059] group-hover:shadow-md"
+                  layoutId={`member-image-${index}`}
+                />
+              </motion.div>
+              <h3 className="text-lg font-bold mt-2">{member.name}</h3>
+              <p className="text-md font-semibold">{member.position}</p>
+            </motion.div>
+          ))
+        ) : (
           <motion.div
-            key={index}
-            className="flex flex-col items-center justify-center text-center p-4 group"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 + index * 0.1 }}
+            key={selectedMember}
+            className="w-full flex flex-col md:flex-row items-center justify-evenly bg-white/5 rounded-2xl shadow-xl py-8 min-[800px]:px-12 px-5 cursor-pointer min-[800px]:gap-20 z-20"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            layout
+            onClick={handleCollapse}
           >
-            <img
-              src={member.image}
-              alt={member.name}
-              className="max-w-[150px] aspect-square rounded-full mb-2 object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out group-hover:shadow-[#17d059] group-hover:shadow-md"
-            />
-            <h3 className="text-lg font-bold mt-2">{member.name}</h3>
-            <p className="text-md font-semibold">{member.position}</p>
+            <div className="flex flex-col items-center mb-1 min-[800px]:mb-0 justify-center">
+              <motion.div
+                className="flex flex-col items-center mb-6 md:mb-0 justify-center"
+                layoutId={`member-image-container-${selectedMember}`}
+                layout
+              >
+                <motion.img
+                  src={members[selectedMember].image}
+                  alt={members[selectedMember].name}
+                  className="max-w-[160px] rounded-full object-cover shadow-lg aspect-square"
+                  layoutId={`member-image-${selectedMember}`}
+                  initial={false}
+                  transition={{ type: "spring", stiffness: 80, damping: 18 }}
+                />
+                <span className="mt-4 text-balance text-xl font-bold text-white text-center w-full">
+                  {members[selectedMember].name}
+                </span>
+              </motion.div>
+            </div>
+            <motion.div
+              className="flex flex-col items-center"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{
+                opacity: showExpandedContent ? 1 : 0,
+                x: showExpandedContent ? 0 : 40,
+              }}
+              transition={{
+                delay: showExpandedContent ? 0.1 : 0,
+                duration: 0.4,
+              }}
+            >
+              <h3 className="min-[800px]:text-4xl text-3xl font-extrabold mb-5 text-white min-[800px]:text-left w-full text-balance">
+                About Our{" "}
+                <span className="text-[#17d059]">
+                  {members[selectedMember].position}
+                </span>
+              </h3>
+              <p className="text-base text-gray-200 w-full min-[800px]:text-left">
+                {members[selectedMember].description}
+              </p>
+            </motion.div>
           </motion.div>
-        ))}
+        )}
       </motion.div>
 
       {/* About K-1000 Image */}
