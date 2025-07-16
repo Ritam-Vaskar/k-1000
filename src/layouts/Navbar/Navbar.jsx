@@ -23,17 +23,21 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`${styles.navbar} backdrop-blur-3xl bg-black/10 shadow-xl py-1.5 overflow-hidden`}>
+    <nav
+      className={`${styles.navbar} backdrop-blur-3xl bg-black/10 shadow-xl py-1.5 overflow-hidden`}
+    >
       <div className={styles.container}>
         <div className={styles.nav}>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-            <div className={styles.logoDiv}>
-              <img
-                className={styles.logoimg}
-                src="/logo-horizontal.png"
-                alt="K-1000 Horizontal Logo"
-              />
-            </div>
+            <NavLink to="/">
+              <div className={styles.logoDiv}>
+                <img
+                  className={styles.logoimg}
+                  src="/logo-horizontal.png"
+                  alt="K-1000 Horizontal Logo"
+                />
+              </div>
+            </NavLink>
           </motion.div>
 
           {/* Desktop Navigation */}
