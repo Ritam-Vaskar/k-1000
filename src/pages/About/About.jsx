@@ -1,12 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./About.module.scss";
-
-// const images = [
-//   "https://crf.kiit.ac.in/wp-content/uploads/2022/01/KIIT-Research-Development-1.jpg",
-//   "https://sustainability.kiit.ac.in/wp-content/uploads/2023/07/crf.jpg",
-//   "https://crf.kiit.ac.in/wp-content/uploads/2020/09/KIIT-Campus-2.jpg",
-// ];
 
 const members = [
   {
@@ -14,14 +8,14 @@ const members = [
     position: "Vice Chancellor",
     image: "/About Page/member-1.jpg",
     description:
-      "Prof. (Dr.) Saranjit Singh received his Ph.D. in Production Engineering from BIT Mesra, M.Tech. from IIT Varanasi (formerly IT-BHU), and B.E. in Mechanical Engineering from Savitribai Phule Pune University. With extensive teaching and research experience, his interests span material processing technologies, metal forming of advanced materials like sintered and foam composites, cleaner manufacturing, DFX methodologies, and quality management. He has guided 5 Ph.D. scholars and 25 Master’s dissertations and published over 100 research papers in reputed national and international journals and conferences. He has authored three books in the area of material processing and is a Fellow of the Institution of Engineers (India). At KIIT, he has held several senior administrative roles, including Dean (Training & Placements), Director (Industry Engagements), and Dean of the School of Mechanical Engineering. Prior to joining KIIT, he served as Associate Professor in the Department of Production Engineering at BIT Mesra. He is currently a Professor at the School of Mechanical Engineering, KIIT, where he continues to contribute actively to research and academic development.",
+      "Prof. (Dr.) Saranjit Singh received his Ph.D. in Production Engineering from BIT Mesra, M.Tech. from IIT Varanasi (formerly IT-BHU), and B.E. in Mechanical Engineering from Savitribai Phule Pune University. With extensive teaching and research experience, his interests span material processing technologies, metal forming of advanced materials like sintered and foam composites, cleaner manufacturing, DFX methodologies, and quality management. He has guided 5 Ph.D. scholars and 25 Master's dissertations and published over 100 research papers in reputed national and international journals and conferences. He has authored three books in the area of material processing and is a Fellow of the Institution of Engineers (India). At KIIT, he has held several senior administrative roles, including Dean (Training & Placements), Director (Industry Engagements), and Dean of the School of Mechanical Engineering. Prior to joining KIIT, he served as Associate Professor in the Department of Production Engineering at BIT Mesra. He is currently a Professor at the School of Mechanical Engineering, KIIT, where he continues to contribute actively to research and academic development.",
   },
   {
     name: "Prof. Dr. Jnyana Ranjan Mohanty",
     position: "Registrar",
     image: "/About Page/member-2.jpg",
     description:
-      "Dr. Jnyana Ranjan Mohanty received his Ph.D. degree in Computer Science from Utkal University, Bhubaneswar in the year 2008. He has more than 28 years of teaching experience (UG & PG levels). He joined KIIT Deemed to be University, Bhubaneswar in July 1997 and has served KIIT  in different administrative capacities too (as Associate Dean &amp; Controller of Examinations). Presently, he is the Registrar of KIIT Deemed to be University. He is actively engaged in research work and has a number of Ph.D. scholars under his guidance. He has authored books and has to his credit innumerable publications in reputed International Scopus/ SCI indexed journals and in International Conference proceedings. He has also edited books published by Springer and  IJCA Volumes. He has conducted several conferences and workshops as the organizing chair/ program chair. His research interests include Queuing Theory, Computational Intelligence, and Cloud Computing.",
+      "Dr. Jnyana Ranjan Mohanty received his Ph.D. degree in Computer Science from Utkal University, Bhubaneswar in the year 2008. He has more than 28 years of teaching experience (UG & PG levels). He joined KIIT Deemed to be University, Bhubaneswar in July 1997 and has served KIIT  in different administrative capacities too (as Associate Dean &amp; Controller of Examinations). Presently, he is the Registrar of KIIT Deemed to be University. He is actively engaged in research work and has a number of Ph.D. scholars under his guidance. He has authored books and has to his credit innumerable publications in reputed International Scopus/ SCI indexed journals and in International Conference proceedings. He has also edited books published by Springer and  IJCA Volumes. He has conducted several conferences and workshops as the organizing chair/ program chair. His research interests include Queuing Theory, Computational Intelligence, and Cloud Computing.",
   },
   {
     name: "Dr. Ajit Kumar Pasayat",
@@ -50,6 +44,22 @@ const stats = [
 const About = () => {
   const [selectedMember, setSelectedMember] = useState(null);
   const [showExpandedContent, setShowExpandedContent] = useState(false);
+  const [coreTeamData, setCoreTeamData] = useState(null);
+  const [isLoadingCoreTeam, setIsLoadingCoreTeam] = useState(true);
+
+  // Fetch core team data
+  useEffect(() => {
+    fetch("/core-team.json")
+      .then((response) => response.json())
+      .then((data) => {
+        setCoreTeamData(data);
+        setIsLoadingCoreTeam(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching core team data:", error);
+        setIsLoadingCoreTeam(false);
+      });
+  }, []);
 
   // Handle card click: show expanded card immediately, fade out others, then show content
   const handleCardClick = (index) => {
@@ -103,82 +113,6 @@ const About = () => {
             its scope and scale as much as KIIT has in a short span of 25 years.
           </motion.p>
         </motion.div>
-
-        {/* Image Section */}
-        {/* <div className={styles.imageContainer}>
-          <motion.div
-            className={styles.imageWrapper}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <img src={images[0]} alt="KIIT Campus" className={styles.image} />
-          </motion.div>
-
-          <motion.div
-            className={styles.imageWrapper}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          ></motion.div>
-        </div>
-
-        <motion.div
-          className={styles.stats}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-        >
-          <div className={styles.statItem}>
-            <div className={styles.statNumber}>500</div>
-            <div className={styles.statLabel}>Students Selected Annually</div>
-          </div>
-          <div className={styles.statItem}>
-            <div className={styles.statNumber}>100+</div>
-            <div className={styles.statLabel}>Faculty Mentors</div>
-          </div>
-          <div className={styles.statItem}>
-            <div className={styles.statNumber}>50+</div>
-            <div className={styles.statLabel}>Research Collaborations</div>
-          </div>
-        </motion.div>
-
-
-        <motion.p
-          className={styles.subText}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-        >
-          Students are selected based on academic performance, research
-          inclination, and alignment with program goals. The program supports
-          students from their first year, ensuring early exposure to
-          interdisciplinary research opportunities.
-        </motion.p>
-
-        <motion.div
-          className={styles.imageWrapper}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-        >
-          <img
-            src={images[2]}
-            alt="KIIT Research Development"
-            className={styles.image}
-          />
-        </motion.div>
-
-        <motion.a
-          href="https://kiit.ac.in/research"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.primaryButton}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Learn More
-        </motion.a> */}
       </motion.div>
 
       {/* Founder Section */}
@@ -221,7 +155,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            Prof. Dr. Achyuta Samanta’s life story reads like a powerful saga of
+            Prof. Dr. Achyuta Samanta's life story reads like a powerful saga of
             grit, determination, and social responsibility. Born and brought up
             in poverty in a remote village in Odisha, he was dealt a cruel blow
             at the tender age of four when he lost his father, after which his
@@ -248,7 +182,7 @@ const About = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="flex flex-wrap items-start justify-evenly mt-11 min-[800px]:px-12 mb-16 px-5 w-full z-10 gap-4"
-        style={{ minHeight: selectedMember === null ? undefined : 0 }} // adjust 400 to match your grid height
+        style={{ minHeight: selectedMember === null ? undefined : 0 }}
       >
         {selectedMember === null ? (
           members.map((member, index) => (
@@ -333,6 +267,155 @@ const About = () => {
         )}
       </motion.div>
 
+      {/* Core Team Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="w-full px-6 md:px-12 mb-16 z-10"
+      >
+        <motion.h1
+          className={`text-2xl ${styles.title} text-center w-full tracking-wide mb-12`}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          Our <span>Core Team</span>
+        </motion.h1>
+
+        {isLoadingCoreTeam ? (
+          // Loading skeleton
+          <div className="space-y-16">
+            {[1, 2, 3, 4].map((level) => (
+              <div key={level} className="mb-16">
+                <div className="h-8 bg-white/10 rounded-lg mb-8 max-w-xs mx-auto animate-pulse"></div>
+                <div
+                  className={`grid gap-6 ${
+                    level <= 2
+                      ? "grid-cols-1 md:grid-cols-2 justify-items-center max-w-4xl mx-auto"
+                      : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+                  }`}
+                >
+                  {Array.from({ length: level <= 2 ? 2 : 6 }).map((_, i) => (
+                    <div
+                      key={i}
+                      className="bg-white/5 rounded-xl p-6 w-full max-w-sm animate-pulse"
+                    >
+                      <div className="w-24 h-24 bg-white/10 rounded-full mx-auto mb-4"></div>
+                      <div className="h-4 bg-white/10 rounded mb-2"></div>
+                      <div className="h-3 bg-white/10 rounded mb-2 w-3/4 mx-auto"></div>
+                      <div className="h-3 bg-white/10 rounded w-1/2 mx-auto"></div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : coreTeamData ? (
+          // Actual content
+          coreTeamData.hierarchy.map((level, levelIndex) => (
+            <motion.div
+              key={levelIndex}
+              className="mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 * levelIndex }}
+            >
+              <motion.h2
+                className={`${styles.levelTitle}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 + 0.1 * levelIndex }}
+              >
+                {level.title}
+              </motion.h2>
+
+              <div
+                className={`${styles.coreTeamGrid} ${
+                  styles[`level${level.level}`]
+                }`}
+              >
+                {level.members.map((member, memberIndex) => (
+                  <motion.div
+                    key={memberIndex}
+                    className={`${styles.coreTeamCard} ${
+                      level.level === 1 || level.level === 2
+                        ? "w-full max-w-sm"
+                        : "w-full"
+                    }`}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 + 0.1 * memberIndex }}
+                    whileHover={{ y: -5 }}
+                  >
+                    <div className="flex flex-col items-center text-center">
+                      {/* Profile Image */}
+                      <img
+                        src={member.image.replace(
+                          "upload",
+                          "upload/w_1024,ar_1:1,c_auto,g_auto,f_auto"
+                        )}
+                        alt={member.name}
+                        className={`${styles.coreTeamAvatar} ${styles.coreTeamImage}`}
+                        style={{
+                          width: "110px",
+                          height: "110px",
+                          borderRadius: "50%",
+                          objectFit: "cover",
+                          backgroundColor: "#2a2a2a",
+                        }}
+                        onError={(e) => {
+                          // Fallback to initials if image fails to load
+                          e.target.style.display = "none";
+                          e.target.nextSibling.style.display = "flex";
+                        }}
+                      />
+
+                      {/* Fallback avatar with initials */}
+                      <div
+                        className={styles.coreTeamAvatar}
+                        style={{
+                          display: "none",
+                          width: "110px",
+                          height: "110px",
+                          fontSize: "1.8rem",
+                        }}
+                      >
+                        {member.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")
+                          .substring(0, 2)}
+                      </div>
+
+                      <h3 className="font-bold text-lg mb-2 text-white">
+                        {member.name}
+                      </h3>
+
+                      <p className="text-[#17d059] font-bold mb-2">
+                        {member.position}
+                      </p>
+
+                      {member.branch && (
+                        <p className="text-gray-300 text-md font-medium">
+                          {member.branch}
+                        </p>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))
+        ) : (
+          // Error state
+          <div className="text-center py-12">
+            <p className="text-gray-400 text-lg">
+              Unable to load core team data
+            </p>
+          </div>
+        )}
+      </motion.div>
+
       {/* About K-1000 Image */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -373,7 +456,7 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
-          K-1000 is KIIT’s official Research and Development (R&D) organization,
+          K-1000 is KIIT's official Research and Development (R&D) organization,
           aimed at supporting 1000 exceptional students in cutting-edge
           research. It focuses on skill development in a competitive environment
           and encourages building projects that solve real-world problems across
