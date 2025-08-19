@@ -3,6 +3,7 @@ import {
   Routes,
   Route,
   useLocation,
+  Navigate,
 } from "react-router-dom";
 import { useEffect } from "react";
 import "./App.scss";
@@ -26,6 +27,26 @@ function ScrollToTop() {
   return null;
 }
 
+function ExternalRedirect({ url }) {
+  useEffect(() => {
+    window.location.href = url;
+  }, [url]);
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+        fontSize: "30px",
+      }}
+    >
+      Redirecting...
+    </div>
+  );
+}
+
 function App() {
   return (
     <Router>
@@ -39,6 +60,12 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/departments" element={<ResearchAreas />} />
         <Route path="/branches" element={<Branches />} />
+        <Route
+          path="/ignithon"
+          element={
+            <ExternalRedirect url="https://forms.gle/rf5BDzyFy6NNEQZm7" />
+          }
+        />
       </Routes>
       <Footer />
     </Router>
