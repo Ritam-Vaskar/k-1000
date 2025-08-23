@@ -63,7 +63,7 @@ function App() {
         <Route
           path="/ignithon"
           element={
-            <ExternalRedirect url="https://forms.gle/rf5BDzyFy6NNEQZm7" />
+            <ExternalRedirect url="https://forms.gle/4TtUTmtZHh9hzahd7" />
           }
         />
       </Routes>
