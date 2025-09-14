@@ -61,9 +61,9 @@ function App() {
         <Route path="/departments" element={<ResearchAreas />} />
         <Route path="/branches" element={<Branches />} />
         <Route
-          path="/ignithon"
+          path="/recruitment"
           element={
-            <ExternalRedirect url="https://forms.gle/4TtUTmtZHh9hzahd7" />
+            <ExternalRedirect url="https://forms.gle/irg7nzkhh3tWnpib8" />
           }
         />
       </Routes>
