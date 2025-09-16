@@ -66,6 +66,12 @@ function App() {
             <ExternalRedirect url="https://forms.gle/irg7nzkhh3tWnpib8" />
           }
         />
+        <Route
+          path="/kampus-konversations-e1"
+          element={
+            <ExternalRedirect url="https://forms.gle/9HakY4Rq2gJWPBXX7" />
+          }
+        />
       </Routes>
       <Footer />
     </Router>
