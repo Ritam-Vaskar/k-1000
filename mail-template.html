@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kampus Konversations: Episode 1 - Registration Open</title>
+    <title>Kampus Konversations: Episode 1 - Event Reminder</title>
     <style>
       /* Reset styles for email clients */
       body,
@@ -119,6 +119,40 @@
 
       .event-info span {
         color: #333333;
+      }
+
+      /* Action buttons */
+      .action-section {
+        margin: 20px 0;
+        text-align: center;
+      }
+
+      .action-button {
+        display: inline-block;
+        color: #ffffff !important;
+        text-decoration: none;
+        padding: 12px 30px;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: bold;
+        margin: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .whatsapp-button {
+        background: linear-gradient(135deg, #25d366, #128c7e);
+      }
+
+      .form-button {
+        background: linear-gradient(135deg, #2d7a5f, #4ade80, #22c55e);
+      }
+
+      .action-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
       }
 
       /* Registration button */
@@ -251,7 +285,7 @@
               src="https://k-1000.vercel.app/logo-square.png"
               alt="K-1000 Logo"
               class="header-logo"
-            />K-1000 Presents
+            />Event Reminder
           </span>
         </h1>
       </div>
@@ -276,7 +310,8 @@
         <div class="event-details">
           <h2>🎯 Event Highlights</h2>
           <div class="event-info">
-            <strong>📅 Date:</strong> <span>24th September, 2025</span>
+            <strong>📅 Date:</strong>
+            <span>Tomorrow - 24th September, 2025</span>
           </div>
           <div class="event-info">
             <strong>⏰ Time:</strong> <span>4:30 PM Onwards</span>
@@ -296,33 +331,60 @@
 
         <!-- Description -->
         <div class="description">
-          <p><strong>Learn. Interact. Grow.</strong></p>
+          <p><strong>🔔 Event Reminder - Tomorrow!</strong></p>
           <p>
-            Join us for the inaugural episode of
-            <strong>Kampus Konversations</strong> - an exclusive speaker session
-            focused on <strong>Higher Studies and GATE preparation</strong>. Get
-            invaluable insights from one of the most respected authorities in
-            the field!
+            This is a friendly reminder that
+            <strong>Kampus Konversations Episode 1</strong> is happening
+            tomorrow! We're excited to have you join us for this exclusive
+            speaker session with Prof. A. Rajakumar on
+            <strong>Higher Studies and GATE preparation</strong>.
           </p>
           <p>
-            This is your opportunity to interact directly with the Chairman of
-            GATE & JAM and gain expert guidance on your academic journey.
+            <strong>For registered participants:</strong> Please complete the
+            following steps to ensure smooth event participation:
           </p>
         </div>
 
-        <!-- Registration Button -->
-        <div class="register-section">
-          <a
-            href="https://k-1000.vercel.app/kampus-konversations-e1"
-            class="register-button"
-            target="_blank"
-          >
-            🎫 Register Now
-          </a>
+        <!-- Action Buttons -->
+        <div class="action-section">
+          <h3 style="color: #1a4d3a; margin-bottom: 20px">
+            📋 Required Actions:
+          </h3>
+
+          <div style="margin: 15px 0">
+            <p style="margin: 10px 0; color: #666; font-weight: bold">
+              Step 1: Join WhatsApp Group
+            </p>
+            <a
+              href="https://chat.whatsapp.com/FHk7RIF0YzbAefFHiI9u8O"
+              class="action-button whatsapp-button"
+              target="_blank"
+            >
+              📱 Join WhatsApp Group
+            </a>
+          </div>
+
+          <div style="margin: 15px 0">
+            <p style="margin: 10px 0; color: #666; font-weight: bold">
+              Step 2: Fill Confirmation Form
+            </p>
+            <a
+              href="https://forms.gle/abpYuS5ZDoKvF77R9"
+              class="action-button form-button"
+              target="_blank"
+            >
+              📝 Fill Confirmation Form
+            </a>
+          </div>
         </div>
 
         <div class="description">
-          <p><em>Limited seats available! Secure your spot today.</em></p>
+          <p>
+            <em
+              >⚠️ Important: Both steps are mandatory for event participation.
+              Complete them before tomorrow's event!</em
+            >
+          </p>
         </div>
       </div>
 
